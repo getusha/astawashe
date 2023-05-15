@@ -1,8 +1,10 @@
-import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
-import { colors } from "../values/colors";
+import {
+    StyleSheet,
+    TouchableOpacity,
+    Text,
+    View
+} from "react-native";
 import { useState } from "react";
-import { Entypo } from "@expo/vector-icons";
-import { AntDesign } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
 
 export default function Reminder(props) {
@@ -18,7 +20,7 @@ export default function Reminder(props) {
         'Shiromeda-Bold': require('../assets/fonts/shiromeda-bold.ttf'),
     });
 
-    if(!fontsLoaded) {
+    if (!fontsLoaded) {
         return null;
     }
 
@@ -44,15 +46,15 @@ export default function Reminder(props) {
                     <Text>{forDate}</Text>
                 </View>
             </View>
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-            <Text style={{
-                marginTop: 'auto',
-                marginBottom: 10,
-                fontSize: 20,
-                color: color,
-                fontFamily: 'Shiromeda-Bold',
-            }}>24</Text>
-            <Text style={{marginTop: 'auto', marginBottom: 12,  fontFamily: 'Shiromeda-Bold'}}> ሰዓት ይቀራል</Text>
+            <View style={{ display: 'flex', flexDirection: 'row' }}>
+                <Text style={{
+                    marginTop: 'auto',
+                    marginBottom: 10,
+                    fontSize: 20,
+                    color: color,
+                    fontFamily: 'Shiromeda-Bold',
+                }}>24</Text>
+                <Text style={{ marginTop: 'auto', marginBottom: 12, fontFamily: 'Shiromeda-Bold' }}> ሰዓት ይቀራል</Text>
             </View>
             {expanded ? (
                 <View style={{

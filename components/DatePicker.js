@@ -1,7 +1,20 @@
-import { Fragment, useEffect, useRef, useState } from "react";
-import { Modal, Pressable, Text, TouchableOpacity, View } from "react-native";
+import {
+    Fragment,
+    useRef,
+    useState
+} from "react";
+import {
+    Modal,
+    Pressable,
+    Text,
+    TouchableOpacity,
+    View
+} from "react-native";
 import { colors } from "../values/colors";
-import { Box, Button, HStack, Icon, IconButton, Overlay, Radio, Select } from "native-base";
+import {
+    Box,
+    IconButton,
+} from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { ALL_MONTHS } from "../values/CONST";
 import DateList from "./DatePicker/DateList";
@@ -16,7 +29,7 @@ export default function DatePicker() {
     const [showDatePicker, setShowDatePicker] = useState(false);
 
     const [showYearList, setShowYearList] = useState(false);
-    
+
     const modalRef = useRef(null);
 
     function incrementMonth() {

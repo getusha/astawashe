@@ -1,0 +1,35 @@
+{
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": true,
+    "arrowParens": "avoid",
+    "printWidth": 20,
+    "tabWidth": 2,
+    "overrides": [
+      {
+        "files": "*.js",
+        "options": {
+          "parser": "babel"
+        }
+      },
+      {
+        "files": "*.jsx",
+        "options": {
+          "parser": "babel"
+        }
+      },
+      {
+        "files": "*.ts",
+        "options": {
+          "parser": "typescript"
+        }
+      },
+      {
+        "files": "*.tsx",
+        "options": {
+          "parser": "typescript"
+        }
+      }
+    ]
+  }
+  
