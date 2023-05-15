@@ -8,6 +8,16 @@ import { Entypo } from "@expo/vector-icons";
 import DatePicker from "../components/DatePicker";
 import { styles } from "../styles";
 
+const renderReminderItem = ({ item, index }) => {
+    return (
+        <Reminder
+            key={index}
+            title={item.title}
+            color={item.color}
+            forDate={item.forDate}
+        />
+    )
+}
 
 export default function Home() {
     const [reminderModal, setReminderModal] = useState(false);
@@ -18,14 +28,7 @@ export default function Home() {
                 <FlatList
                     data={data}
                     style={[styles.w100, styles.p1]}
-                    renderItem={({ item, index }) => (
-                        <Reminder
-                            key={index}
-                            title={item.title}
-                            color={item.color}
-                            forDate={item.forDate}
-                        />
-                    )}
+                    renderItem={renderReminderItem}
                     showsVerticalScrollIndicator={false}
                 />
             </View>
@@ -45,13 +48,11 @@ export default function Home() {
                             አቋርጥ
                         </Text>
                     </TouchableOpacity>
-
                     <TouchableOpacity style={{...styles.modalBottomBtn, backgroundColor: colors.lightGreen}}>
                         <Text style={styles.modalBottomBtnText}>ጨርስ</Text>
                     </TouchableOpacity>
                 </View>
             </Modal>
-
             <TouchableOpacity style={styles.fab} onPress={() => setReminderModal(true)} >
                 <Entypo size={30} color={'white'} name="plus" />
             </TouchableOpacity>
